@@ -1,85 +1,145 @@
-set noswapfile
+" =========
+" Functions
+" =========
 
-" ----------------------------------------------------------------------------
-"  Text Formatting
-" ----------------------------------------------------------------------------
+" Some files should wrap
+function! s:setupWrapping()
+  set wrap
+  set linebreak
+  set textwidth=72
+  set nolist
+endfunction
 
-set autoindent             " automatic indent new lines
-set smartindent            " be smart about it
-inoremap # X<BS>#
-set nowrap                 " do not wrap lines
-set softtabstop=2          " yep, two
-set shiftwidth=2           " ..
-set tabstop=4
-set expandtab              " expand tabs to spaces
-set nosmarttab             " fuck tabs
-set formatoptions+=n       " support for numbered/bullet lists
-"set textwidth=80           " wrap at 80 chars by default
-set virtualedit=block      " allow virtual edit in visual block ..
+" =============
+" Main Settings
+" =============
 
-" ----------------------------------------------------------------------------
-"  Remapping
-" ----------------------------------------------------------------------------
+" Load Pathogen
+" -------------
 
-" lead with ,
+call pathogen#infect('colors')
+call pathogen#infect('langs')
+call pathogen#infect('tools')
+
+" Leader
+" ------
+
 let mapleader = ","
 
-" exit to normal mode with 'jj'
-inoremap jj <ESC>
+" Basics
+" ------
 
+color getafe
+set background=dark
+set nocompatible   " Use vim, no vi defaults
+set ruler          " Show line and column number
+set relativenumber " Show line numbers relative to current line
+syntax enable      " Turn on syntax highlighting allowing local overrides
+set encoding=utf-8 " Set default encoding
+"set laststatus=2   " always show status bar
 
-" reflow paragraph with Q in normal and visual mode
-nnoremap Q gqap
-vnoremap Q gq
+" work with tmux copy/paste
+" set clipboard=unnamed
 
-" sane movement with wrap turned on
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-vnoremap <Up> gk
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
+" Whitespace
+" ----------
 
-" ----------------------------------------------------------------------------
-"  UI
-" ----------------------------------------------------------------------------
+set nowrap          " Don't wrap lines
+set tabstop=2       " 1 tab = 2 spaces
+set shiftwidth=2    " Autoindent (with <<) is 2 spaces
+set expandtab       " Spaces > Tabs
+set list            " Show invisible characters
+set backspace=indent,eol,start  " Backspace through ALL THE THINGS
 
-set ruler                  " show the cursor position all the time
-set noshowcmd              " don't display incomplete commands
-set nolazyredraw           " turn off lazy redraw
-set number                 " line numbers
-set wildmenu               " turn on wild menu
-set wildmode=list:longest,full
-set ch=2                   " command line height
-set backspace=2            " allow backspacing over everything in insert mode
-set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
-set shortmess=filtIoOA     " shorten messages
-set report=0               " tell us about changes
-set nostartofline          " don't jump to the start of line when scrolling
+" List characters
 
+set listchars=""          " Reset
+set listchars=tab:\ \     " Tab should display as " ", trailing whitespace as "."
+set listchars+=trail:.    " Show trailing spaces as dots
+set listchars+=extends:>  " Character to show in the last column when too much text (right)
+set listchars+=precedes:<  " Character to show in the last column when too much text (left)
 
-" ----------------------------------------------------------------------------
-" Visual Cues
-" ----------------------------------------------------------------------------
+" Tab Completion - make tab completion for files/buffers act like bash
+set wildmode=longest,list
+set wildmenu
 
-set showmatch              " brackets/braces that is
-set mat=5                  " duration to show matching brace (1/10 sec)
-set incsearch              " do incremental searching
-set laststatus=2           " always show the status line
-set ignorecase             " ignore case when searching
-set nohlsearch             " don't highlight searches
-set visualbell             " shut the fuck up
+" Tab Completion - ignore certain files
+set wildignore+=*/.git/*,*/.sass-cache/*
 
+" Window min sizes. By Gary Bernhardt.
+set winwidth=80
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=5
+set winminheight=5
+set winheight=999
 
-" ---------------------------------------------------------------------------
-"  Strip all trailing whitespace in file
-" ---------------------------------------------------------------------------
+" Searching
+" ---------
 
-function! StripWhitespace ()
-    exec ':%s/ \+$//gc'
-endfunction
-map ,s :call StripWhitespace ()<CR>
+set hlsearch   " Enable highlight
+set incsearch  " Enable incremental searching
+set ignorecase " Ignore case when searching
+set smartcase  " Well, don't always ignore
+
+" Backup Dirs
+" -----------
+set backupdir=~/.vim/_backup// " backup files
+set directory=~/.vim/_temp//   " swap files
+
+" ==================
+" File Type Settings
+" ==================
+
+filetype plugin indent on " Turn on filetype plugins (:help filetype-plugin)
+
+" Wrap Markdown Files
+
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} setf markdown | call s:setupWrapping()
+
+" ============
+" Key Mappings
+" ============
+
+" Use sane regexes
+nnoremap / /\v
+vnoremap / /\v
+
+" Next buffer
+nmap <silent> ,. :bnext<CR>
+
+" Previous buffer
+nmap <silent> ,m :bprev<CR>
+
+" /asdf != winning
+nnoremap <CR> :nohlsearch<CR>
+
+" quick file listing/search/etc
+nnoremap <leader>l :!tree --dirsfirst -FL 2<CR>
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>p :pwd<CR>
+
+" window split shortcuts
+nnoremap <leader>v <C-w>v
+nnoremap <leader>s <C-w>s
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" ack.
+nnoremap <leader>f :Ack<space>
+
+" no! use hjkl
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+" NERDTree
+nmap <leader>n :NERDTreeToggle<CR>
+
+" vimux
+nmap <leader>R :PromptVimTmuxCommand<CR>
+nmap <leader>r :RunLastVimTmuxCommand<CR>
