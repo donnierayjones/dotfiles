@@ -36,6 +36,7 @@ eval "$(rbenv init -)"
 alias ls="ls -G"
 alias ll="ls -lG"
 alias la="ls -laG"
+alias rake="noglob rake"
 
 function chpwd() {
   emulate -L zsh
