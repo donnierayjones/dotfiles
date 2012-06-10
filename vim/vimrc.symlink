@@ -7,8 +7,14 @@ function! s:setupWrapping()
   set wrap
   set linebreak
   "set textwidth=72
-  set columns=80
+  set columns=76
   set nolist
+
+  " jk$0 fix for wrapped lines
+  noremap  <buffer> <silent> k gk
+  noremap  <buffer> <silent> j gj
+  noremap  <buffer> <silent> 0 g0
+  noremap  <buffer> <silent> $ g$
 endfunction
 
 " =============
@@ -34,7 +40,7 @@ color Tomorrow
 set background=light
 set nocompatible   " Use vim, no vi defaults
 set ruler          " Show line and column number
-"set relativenumber " Show line numbers relative to current line
+set relativenumber " Show line numbers relative to current line
 syntax enable      " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8 " Set default encoding
 "set laststatus=2   " always show status bar
@@ -106,12 +112,6 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} setf markdown | call s:setu
 " Use sane regexes
 nnoremap / /\v
 vnoremap / /\v
-
-" jk$0 fix for wrapped lines
-noremap  <buffer> <silent> k gk
-noremap  <buffer> <silent> j gj
-noremap  <buffer> <silent> 0 g0
-noremap  <buffer> <silent> $ g$
 
 " Next buffer
 nmap <silent> ,. :bnext<CR>
