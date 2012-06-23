@@ -6,8 +6,7 @@
 function! s:setupWrapping()
   set wrap
   set linebreak
-  "set textwidth=72
-  set columns=76
+  set textwidth=72
   set nolist
 
   " jk$0 fix for wrapped lines
@@ -36,13 +35,14 @@ let mapleader = ","
 " Basics
 " ------
 
-color Tomorrow
-set background=light
+color getafe
+set background=dark
 set nocompatible   " Use vim, no vi defaults
 set ruler          " Show line and column number
 set relativenumber " Show line numbers relative to current line
 syntax enable      " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8 " Set default encoding
+set hidden         " Unsaved buffers can be in the background
 "set laststatus=2   " always show status bar
 
 " work with tmux copy/paste
@@ -72,6 +72,9 @@ set wildmenu
 
 " Tab Completion - ignore certain files
 set wildignore+=*/.git/*,*/.sass-cache/*
+
+" CtrlP Custom Ignores
+let g:ctrlp_custom_ignore = 'node_modules$\|DS_Store\|\.git$'
 
 " Window min sizes. By Gary Bernhardt.
 "set winwidth=80
@@ -146,6 +149,10 @@ noremap <Right> <nop>
 
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
+
+" Buffergator
+let g:buffergator_suppress_keymaps = 1
+nmap <leader>b :BuffergatorToggle<CR>
 
 " vimux
 nmap <leader>R :PromptVimTmuxCommand<CR>

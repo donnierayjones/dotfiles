@@ -2,5 +2,5 @@
 " Display Options
 " ===============
 
-set guifont=Inconsolata:h16 " <3 Inconsolota
+set guifont=Cousine:h15
 set guioptions=aAce         " hide junk I don't need
