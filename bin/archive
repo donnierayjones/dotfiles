@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+mkdir -p ./.archive/
+mv $1 ./.archive/

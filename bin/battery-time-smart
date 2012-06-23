@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+export bat_output=`pmset -g batt | tail -n1`
+export bat_status=`echo $bat_output | awk '{print $3}'`
+if [ $bat_status != 'charged;' ]
+then
+  pmset -g batt | tail -n1 | awk '{print $4, $5}' | sed 's/;//'
+else
+  echo '---]='
+fi
