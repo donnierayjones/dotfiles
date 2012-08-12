@@ -81,9 +81,9 @@ let g:ctrlp_custom_ignore = 'node_modules$\|DS_Store\|\.git$'
 " We have to have a winheight bigger than we want to set winminheight. But if
 " we set winheight to be huge before winminheight, the winminheight set will
 " fail.
-set winheight=5
-set winminheight=5
-set winheight=999
+"set winheight=5
+"set winminheight=5
+"set winheight=999
 
 " Searching
 " ---------
@@ -149,10 +149,6 @@ noremap <Right> <nop>
 
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
-
-" Buffergator
-let g:buffergator_suppress_keymaps = 1
-nmap <leader>b :BuffergatorToggle<CR>
 
 " vimux
 nmap <leader>R :PromptVimTmuxCommand<CR>

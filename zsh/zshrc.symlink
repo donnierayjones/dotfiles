@@ -40,7 +40,7 @@ eval "$(rbenv init -)"
 
 alias ls="ls -G"
 alias ll="ls -lG"
-alias la="ls -laG"
+alias la="ls -aG"
 alias rake="noglob rake"
 alias nw="tmux new-window"
 
