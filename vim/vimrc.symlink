@@ -126,7 +126,6 @@ nmap <silent> ,m :bprev<CR>
 nnoremap <CR> :nohlsearch<CR>
 
 " quick file listing/search/etc
-nnoremap <leader>l :!tree --dirsfirst -FL 2<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>p :pwd<CR>
 
@@ -153,3 +152,6 @@ nmap <leader>n :NERDTreeToggle<CR>
 " vimux
 nmap <leader>R :PromptVimTmuxCommand<CR>
 nmap <leader>r :RunLastVimTmuxCommand<CR>
+
+" Tagbar
+nnoremap <leader>l :TagbarToggle<CR>
