@@ -2,7 +2,7 @@
 " Display Options
 " ===============
 
-set guifont=Cousine:h15
+set guifont=Inconsolata:h18
 set guioptions=aAce         " hide junk I don't need
 
 call pathogen#infect('gui-tools')
