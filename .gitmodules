@@ -4,3 +4,84 @@
 [submodule "iterm2/iterm2-getafe"]
 	path = iterm2/iterm2-getafe
 	url = https://github.com/donnierayjones/iterm2-getafe
+[submodule "vim/vim.symlink/gui-tools/zoom.vim"]
+	path = vim/vim.symlink/gui-tools/zoom.vim
+	url = https://github.com/vim-scripts/zoom.vim
+[submodule "vim/vim.symlink/langs/coffeescript"]
+	path = vim/vim.symlink/langs/coffeescript
+	url = https://github.com/kchmck/vim-coffee-script
+[submodule "vim/vim.symlink/langs/csv"]
+	path = vim/vim.symlink/langs/csv
+	url = https://github.com/chrisbra/csv.vim
+[submodule "vim/vim.symlink/langs/git"]
+	path = vim/vim.symlink/langs/git
+	url = https://github.com/tpope/vim-git
+[submodule "vim/vim.symlink/langs/haml"]
+	path = vim/vim.symlink/langs/haml
+	url = https://github.com/tpope/vim-haml
+[submodule "vim/vim.symlink/langs/javascript"]
+	path = vim/vim.symlink/langs/javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "vim/vim.symlink/langs/markdown"]
+	path = vim/vim.symlink/langs/markdown
+	url = https://github.com/tpope/vim-markdown
+[submodule "vim/vim.symlink/langs/nodejs"]
+	path = vim/vim.symlink/langs/nodejs
+	url = https://github.com/mmalecki/vim-node.js.git
+[submodule "vim/vim.symlink/langs/rails"]
+	path = vim/vim.symlink/langs/rails
+	url = https://github.com/tpope/vim-rails
+[submodule "vim/vim.symlink/langs/ruby"]
+	path = vim/vim.symlink/langs/ruby
+	url = https://github.com/vim-ruby/vim-ruby
+[submodule "vim/vim.symlink/langs/scss"]
+	path = vim/vim.symlink/langs/scss
+	url = https://github.com/cakebaker/scss-syntax.vim
+[submodule "vim/vim.symlink/tools/ack"]
+	path = vim/vim.symlink/tools/ack
+	url = https://github.com/mileszs/ack.vim
+[submodule "vim/vim.symlink/tools/ctrlp"]
+	path = vim/vim.symlink/tools/ctrlp
+	url = https://github.com/kien/ctrlp.vim
+[submodule "vim/vim.symlink/tools/minibufexpl.vim"]
+	path = vim/vim.symlink/tools/minibufexpl.vim
+	url = https://github.com/fholgado/minibufexpl.vim
+[submodule "vim/vim.symlink/tools/nerdcommenter"]
+	path = vim/vim.symlink/tools/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
+[submodule "vim/vim.symlink/tools/nerdtree"]
+	path = vim/vim.symlink/tools/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/vim.symlink/tools/numbers.vim"]
+	path = vim/vim.symlink/tools/numbers.vim
+	url = https://github.com/myusuf3/numbers.vim/
+[submodule "vim/vim.symlink/tools/supertab"]
+	path = vim/vim.symlink/tools/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "vim/vim.symlink/tools/surround"]
+	path = vim/vim.symlink/tools/surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/vim.symlink/tools/syntastic"]
+	path = vim/vim.symlink/tools/syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "vim/vim.symlink/tools/tagbar"]
+	path = vim/vim.symlink/tools/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "vim/vim.symlink/tools/vim-fugitive"]
+	path = vim/vim.symlink/tools/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/vim.symlink/tools/vim-ps1"]
+	path = vim/vim.symlink/tools/vim-ps1
+	url = https://github.com/PProvost/vim-ps1
+[submodule "vim/vim.symlink/tools/vim-shell"]
+	path = vim/vim.symlink/tools/vim-shell
+	url = https://github.com/xolox/vim-shell
+[submodule "vim/vim.symlink/tools/vimux"]
+	path = vim/vim.symlink/tools/vimux
+	url = https://github.com/benmills/vimux
+[submodule "vim/vim.symlink/tools/xterm-color-table.vim"]
+	path = vim/vim.symlink/tools/xterm-color-table.vim
+	url = https://github.com/guns/xterm-color-table.vim
+[submodule "zsh/oh-my-zsh.symlink"]
+	path = zsh/oh-my-zsh.symlink
+	url = https://github.com/donnierayjones/oh-my-zsh
