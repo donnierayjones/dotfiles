@@ -1,0 +1,6 @@
+[submodule "vim/vim.symlink/colors/getafe"]
+	path = vim/vim.symlink/colors/getafe
+	url = https://github.com/donnierayjones/vim-getafe
+[submodule "iterm2/iterm2-getafe"]
+	path = iterm2/iterm2-getafe
+	url = https://github.com/donnierayjones/iterm2-getafe
