@@ -1,0 +1,9 @@
+body {
+  margin-top: 2em !important;
+}
+body.medwidthmode {
+  max-width: 45em !important;
+}
+#controlbar_container {
+  display: none;
+}
