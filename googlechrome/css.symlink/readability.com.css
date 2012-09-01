@@ -1,9 +1,0 @@
-@import url('http://yandex.st/highlightjs/7.1/styles/solarized_light.min.css');
-
-.pitch {
-  display: none !important;
-}
-
-pre, code {
-  background: transparent !important;
-}
