@@ -7,6 +7,9 @@
 [submodule "vim/vim.symlink/gui-tools/zoom.vim"]
 	path = vim/vim.symlink/gui-tools/zoom.vim
 	url = https://github.com/vim-scripts/zoom.vim
+[submodule "vim/vim.symlink/gui-tools/distraction-free-writing-vim"]
+	path = vim/vim.symlink/gui-tools/distraction-free-writing-vim
+	url = https://github.com/donnierayjones/distraction-free-writing-vim
 [submodule "vim/vim.symlink/langs/coffeescript"]
 	path = vim/vim.symlink/langs/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script
