@@ -46,9 +46,9 @@
 [submodule "vim/vim.symlink/tools/ctrlp"]
 	path = vim/vim.symlink/tools/ctrlp
 	url = https://github.com/kien/ctrlp.vim
-[submodule "vim/vim.symlink/tools/minibufexpl.vim"]
-	path = vim/vim.symlink/tools/minibufexpl.vim
-	url = https://github.com/fholgado/minibufexpl.vim
+[submodule "vim/vim.symlink/tools/dwm.vim"]
+	path = vim/vim.symlink/tools/dwm.vim
+	url = https://github.com/vim-scripts/dwm.vim 
 [submodule "vim/vim.symlink/tools/nerdcommenter"]
 	path = vim/vim.symlink/tools/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter
