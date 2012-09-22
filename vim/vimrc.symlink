@@ -155,3 +155,7 @@ nmap <leader>r :RunLastVimTmuxCommand<CR>
 
 " Tagbar
 nnoremap <leader>l :TagbarToggle<CR>
+
+" Rename Variables
+" For local replace
+nnoremap gr [{V%:s/<C-R>///gc<left><left><left>
