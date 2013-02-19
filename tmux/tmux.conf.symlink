@@ -1,0 +1,116 @@
+
+## Basics
+## ======
+
+set -g prefix C-a       # Use Control+a for the command prefix
+bind C-a send-prefix    # But send Control+a to processes (by tapping twice)
+unbind C-b              # Free up Control+b
+set -sg escape-time 1   # Set delay to not interfere with vim
+
+# use zsh
+set -g default-shell /bin/zsh
+
+## Copy / Paste
+## ============
+
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+# use vim-inspired bindings for copy/paste
+
+setw -g mode-keys vi    # Use vim's movement keys
+unbind [                # Use Esc instead of [ for copy-mode
+bind Escape copy-mode
+unbind p
+bind p paste-buffer
+bind -t vi-copy 'v' begin-selection
+bind -t vi-copy 'y' copy-selection
+
+## Display Settings
+## ================
+
+set -g default-terminal "screen-256color" # show 256 colors
+set -g status-fg default
+set -g status-bg default
+set -g status-attr bright
+
+setw -g window-status-fg default
+setw -g window-status-bg default
+setw -g window-status-attr bright
+set-window-option -g window-status-format ' #W '
+
+setw -g window-status-current-fg black
+setw -g window-status-current-bg blue
+setw -g window-status-current-attr bright
+set-window-option -g window-status-current-format ' #W '
+
+setw -g window-status-activity-fg red
+setw -g window-status-activity-bg black
+
+set -g message-fg black
+set -g message-bg red
+set -g message-attr bright
+
+#setw -g automatic-rename on
+
+## Status bar
+## ==========
+
+set -g status-utf8 on
+set -g status-right "#(~/bin/battery-time-smart) • %a %b %d %l:%M"
+set -g status-left ""
+set -g status-interval 60
+set -g status-justify left
+
+# Add visual notification on window events
+set -g monitor-activity on
+set -g visual-activity on
+
+## Key Bindings
+## ============
+
+# Note: use the following to bind a command with no prefix:
+# bind-key -n <key> <command>
+
+# copy / paste to system clipboard
+bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
+bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
+
+# r: Reload tmux config
+bind r source-file ~/.tmux.conf \; display "Reloaded config."
+
+# Use vim-inspired pane split bindings
+bind v split-window -h
+bind s split-window -v
+
+# Movement between panes
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Movement between windows
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
+
+# Resizing panes
+bind H resize-pan -L 5
+bind J resize-pan -D 5
+bind K resize-pan -U 5
+bind L resize-pan -R 5
+
+# Maximize panes
+unbind Up
+bind Up new-window -d -n tmp \; swap-pane -s tmp.0 \; select-window -t tmp
+unbind Down
+bind Down last-window \; swap-pane -s tmp.0 \; kill-window -t tmp
+
+## Mouse options
+## =============
+
+# Disable mouse mode
+setw -g mode-mouse off
+
+# Disable mouse interaction with panes & windows
+set -g mouse-select-pane off
+set -g mouse-resize-pane off
+set -g mouse-select-window off

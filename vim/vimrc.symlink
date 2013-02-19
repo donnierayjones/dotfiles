@@ -6,7 +6,7 @@
 function! s:setupWrapping()
   set wrap
   set linebreak
-  set textwidth=72
+  set textwidth=66
   set nolist
 
   " jk$0 fix for wrapped lines
@@ -132,6 +132,8 @@ nnoremap <leader>p :pwd<CR>
 " window split shortcuts
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
+nnoremap <C-_> <C-w>_
+nnoremap <C-=> <C-w>=
 "nnoremap <C-h> <C-w>h
 "nnoremap <C-j> <C-w>j
 "nnoremap <C-k> <C-w>k
