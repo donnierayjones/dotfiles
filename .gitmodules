@@ -43,6 +43,9 @@
 [submodule "vim/vim.symlink/tools/ack"]
 	path = vim/vim.symlink/tools/ack
 	url = https://github.com/mileszs/ack.vim
+[submodule "vim/vim.symlink/tools/closetag.vim"]
+	path = vim/vim.symlink/tools/closetag.vim
+	url = https://github.com/vim-scripts/closetag.vim
 [submodule "vim/vim.symlink/tools/ctrlp"]
 	path = vim/vim.symlink/tools/ctrlp
 	url = https://github.com/kien/ctrlp.vim

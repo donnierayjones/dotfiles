@@ -71,7 +71,7 @@ set wildmode=longest,list
 set wildmenu
 
 " Tab Completion - ignore certain files
-set wildignore+=*/.git/*,*/.sass-cache/*
+set wildignore+=*/.sass-cache/*
 
 " CtrlP Custom Ignores
 let g:ctrlp_custom_ignore = 'node_modules$\|DS_Store\|\.git$'
